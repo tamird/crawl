@@ -3,3 +3,7 @@
 name = "crawl"
 version = "0.0.1"
 authors = ["Tamir Duberstein <tamird@gmail.com>"]
+
+[dependencies]
+log = "*"
+env_logger = "*"
