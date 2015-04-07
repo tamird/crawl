@@ -1,5 +1,3 @@
-#![feature(std_misc,thread_sleep)]
-
 #[macro_use]
 extern crate log;
 extern crate env_logger;
@@ -7,7 +5,6 @@ extern crate env_logger;
 use std::collections::HashSet;
 use std::sync::{Arc, Condvar, Mutex, RwLock};
 use std::thread;
-use std::time::duration::Duration;
 
 type URI = String;
 
@@ -31,7 +28,7 @@ impl<T> WorkQueue<T> {
 }
 
 fn get_links(uri: &URI) -> HashSet<URI> {
-    thread::sleep(Duration::seconds(3));
+    thread::sleep_ms(3000);
     let mut s = HashSet::new();
     s.insert(uri.clone());
     s.insert("sup".to_string());
